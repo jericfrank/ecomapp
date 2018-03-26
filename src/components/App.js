@@ -1,11 +1,7 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
-import { Container, Content, Drawer } from 'native-base';
+import { Container, Content, Drawer, StyleProvider } from 'native-base';
+
+import getTheme from '../../native-base-theme/components';
 
 import Header from './Header';
 import SideBar from './Sidebar';
@@ -21,15 +17,17 @@ export default class App extends Component<Props> {
 
     render() {
         return (
-            <Container>
-                <Drawer
-                    ref={(ref) => { this.drawer = ref; }}
-                    content={<SideBar navigator={this.navigator} />}
-                    onClose={() => this.closeDrawer()} >
-                    <Header openDrawer={this.openDrawer.bind(this)}/>
-                    <Content padder/>
-                </Drawer>
-            </Container>
+            <StyleProvider style={getTheme()}>
+                <Container>
+                    <Drawer
+                        ref={(ref) => { this.drawer = ref; }}
+                        content={<SideBar navigator={this.navigator} />}
+                        onClose={() => this.closeDrawer()} >
+                        <Header openDrawer={this.openDrawer.bind(this)}/>
+                        <Content padder/>
+                    </Drawer>
+                </Container>
+            </StyleProvider>
         );
     }
 }
