@@ -5,6 +5,7 @@ import getTheme from '../../native-base-theme/components';
 
 import Header from './Header';
 import SideBar from './Sidebar';
+import Items from './Items';
 
 export default class App extends Component<Props> {
     closeDrawer = () => {
@@ -24,7 +25,9 @@ export default class App extends Component<Props> {
                         content={<SideBar navigator={this.navigator} />}
                         onClose={() => this.closeDrawer()} >
                         <Header openDrawer={this.openDrawer.bind(this)}/>
-                        <Content padder/>
+                        <Content>
+                            <Items/>
+                        </Content>
                     </Drawer>
                 </Container>
             </StyleProvider>
