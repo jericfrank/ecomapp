@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import { Header, Button, Icon, Title } from 'native-base';
+import { Button, Icon, Title } from 'native-base';
 
-import { Left, Right, Body } from '../styles/header';
+import { Header, Left, Right, Body } from '../styles/header';
 
 export default class HeaderComponent extends Component {
     render() {
         return (
             <Header noShadow>
                 <Left>
-                    <Button transparent onPress={()=>this.props.openDrawer()}>
-                        <Icon name='menu' />
+                    <Button transparent onPress={()=>this.props.onPress()}>
+                        <Icon name={this.props.icon} />
                     </Button>
                 </Left>
                 <Body>
-                    <Title>Menu</Title>
+                    <Title>{this.props.title}</Title>
                 </Body>
                 <Right/>
             </Header>

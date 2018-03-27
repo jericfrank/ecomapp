@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import App from './src/components/App';
+import Navigation from './src/components/Navigation';
 
-AppRegistry.registerComponent('ecomapp_nativebase', () => App);
+AppRegistry.registerComponent('ecomapp_nativebase', () => Navigation);

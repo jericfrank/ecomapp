@@ -8,6 +8,10 @@ import SideBar from './Sidebar';
 import Items from './Items';
 
 export default class App extends Component<Props> {
+    static navigationOptions = {
+        header: false
+    };
+
     closeDrawer = () => {
         this.drawer._root.close();
     };
@@ -24,9 +28,9 @@ export default class App extends Component<Props> {
                         ref={(ref) => { this.drawer = ref; }}
                         content={<SideBar navigator={this.navigator} />}
                         onClose={() => this.closeDrawer()} >
-                        <Header openDrawer={this.openDrawer.bind(this)}/>
+                        <Header onPress={this.openDrawer.bind(this)} icon="menu" title="Menu"/>
                         <Content>
-                            <Items/>
+                            <Items navigation={this.props.navigation}/>
                         </Content>
                     </Drawer>
                 </Container>

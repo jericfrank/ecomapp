@@ -55,7 +55,7 @@ export default class Items extends Component {
                 spacing={2}
                 itemDimension={130}
                 items={ITEM}
-                renderItem={item => (<CardItem data={item} />)}
+                renderItem={item => (<CardItem navigation={this.props.navigation} data={item} />)}
             />
         );
     }

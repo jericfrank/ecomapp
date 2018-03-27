@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-import { Left as L, Right as R, Body as B } from 'native-base';
+import { Header as H, Left as L, Right as R, Body as B } from 'native-base';
+
+export const Header = styled( H )`
+`;
 
 export const Left = styled( L )`
     flex: 1;
